@@ -1,12 +1,17 @@
 def helper(flattenDic, key, dic):
   for k in dic.keys():
-      if type(dic[k]) is dict:
-        helper(flattenDic, key + "." + k, dic[k])    
+      if len(key) == 0:
+      	new_key = k
+      elif len(k) == 0:
+      	new_key = key
       else:
-        flattenDic[key + "." + k] = dic[k] 
-          
+      	new_key = key + "." + k				
   
-
+      if type(dic[k]) is dict:
+        helper(flattenDic, new_key, dic[k])    
+      else:
+        flattenDic[new_key] = dic[k] 
+          
 def flatten_dictionary(dictionary):
   #pass # your code goes here
   flattenDic = {}
