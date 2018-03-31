@@ -1,11 +1,9 @@
 def helper(flattenDic, key, dic):
-  
   for k in dic.keys():
-      key = key + "." + k
       if type(dic[k]) is dict:
-        helper(flattenDic, key, dic[k])    
+        helper(flattenDic, key + "." + k, dic[k])    
       else:
-        flattenDic[key] = dic[k] 
+        flattenDic[key + "." + k] = dic[k] 
           
   
 
@@ -19,7 +17,7 @@ def flatten_dictionary(dictionary):
         flattenDic[key] = dictionary[key] 
             
   return flattenDic
-
+  
 dic = {
     "Key1" : "1",
     "Key2" : {
@@ -35,6 +33,3 @@ dic = {
 }
 
 print flatten_dictionary(dic)
-
-
-
