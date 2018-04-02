@@ -26,8 +26,6 @@ class LinkedList(object):
 			print node.val	
 			node = node.next
 			
-		
-
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
 		"""
