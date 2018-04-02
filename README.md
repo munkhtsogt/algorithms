@@ -1,4 +1,2 @@
 # algorithms
-LeetCode problems
-
-:)
+LeetCode problems and Data structures
