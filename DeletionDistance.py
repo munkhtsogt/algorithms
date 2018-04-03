@@ -7,7 +7,7 @@ Given the strings str1 and str2, write an efficient function deletionDistance th
 '''
 def deletion_distance(str1, str2):
 	
-	matrix = [[0] * (len(str1) + 2) for i in range(len(str2) + 2)]
+	matrix = [[0] * (len(str2) + 2) for i in range(len(str1) + 2)]
 	for i in range(len(str1) + 1):
 		for j in range(len(str2) + 1):
 			if i == 0:
@@ -21,4 +21,4 @@ def deletion_distance(str1, str2):
 
 	return matrix[len(str1)][len(str2)]		
 	
-print deletion_distance("heat", "hit")
+print deletion_distance("ab", "ba")
