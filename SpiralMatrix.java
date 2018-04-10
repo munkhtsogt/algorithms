@@ -25,14 +25,14 @@ class SpiralMatrix {
       
       int[] results = helper(matrix);
       
-      for(int i = 0; i < results.length - 1; i++){
+      for(int i = 0; i < results.length; i++){
         System.out.print(results[i] + " ");
       }
       System.out.println();
   }
   
   public static int[] helper(int[][] matrix){
-    int[] results = new int[matrix.length * matrix[0].length + 1];
+    int[] results = new int[matrix.length * matrix[0].length];
       
     int bottom = 0, right = matrix[0].length - 1, left = 0, up = matrix.length - 1;
     int index = 0;
