@@ -22,7 +22,7 @@ class Solution(object):
 		if root:
 			left = root.left
 			root.left = root.right
-			root.rigt = right
+			root.right = left
 			self.invertTree2(root.left)
 			self.invertTree2(root.right)
 	
