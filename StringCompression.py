@@ -1,30 +1,16 @@
 class Solution(object):
     def compress(self, chars):
-		"""
-		:type chars: List[str]
-		:rtype: int
-		"""
-		if len(chars) == 0: return 0
-		
-		chars.sort()
-		f, count, r = chars[0], 1, 1
-		for i in range(1, len(chars)):
-			if f == chars[i]:
-				count += 1
-			else:
-				f = chars[i]
-				r += 1
-				if count != 1:
-					while count != 0:
-						r += 1
-						count /= 10
-				count = 1
-				
-		if count != 1:
-			while count != 0:
-				r += 1
-				count /= 10
-						
-		return r   
+        left = i = 0
+        while i < len(chars):
+            char, length = chars[i], 1
+            while (i + 1) < len(chars) and char == chars[i + 1]:
+                length, i = length + 1, i + 1
+            chars[left] = char
+            if length > 1:
+                len_str = str(length)
+                chars[left + 1:left + 1 + len(len_str)] = len_str
+                left += len(len_str)
+            left, i = left + 1, i + 1
+        return left  
         
-print Solution().compress(["a","b","b","b","b","b","b","b","b","b","b","b","b"])
+print Solution().compress(["a","a","a","a", "b","b","a","a"])

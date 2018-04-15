@@ -1,7 +1,7 @@
 import math
 '''
 TIME COMPLEXITY: 1 + 4 + 4 ^ 2 + ... 4 ^ (n - 1) = O(4^n)
-SPACE COMPLEXITY: O(1)
+SPACE COMPLEXITY: depth - stack depth
 '''
 class Solution(object):
 	
@@ -36,9 +36,5 @@ class Solution(object):
 		DRAW A LINE BETWEEN GIVEN COORDINATES
 		'''
 		print x1, y1, x2, y2
-
-
-
-
-
+		
 Solution().drawHTree(8, 0, 16, 3)
