@@ -40,22 +40,19 @@ class Solution(object):
 		:rtype: int
 		"""
 		count = 0
-		data = {}
+		prev = None
 		G = set(G)
 		while head != None:
-			if head.val in G and head.val not in data:
+			if head.val in G and prev != head:
 				count += 1
-				data[head.val] = 1
-			if head.next != None and head.next.val not in data:	
+			if head.next != None:	
 				if head.next.val in G:
-					count += 1
-				if (head.val in G and head.next.val in G):
-					count -= 1
-		
-				data[head.next.val] = 1
-		
+				    count += 1
+				if head.val in G and head.next.val in G:
+				    count -= 1
+			prev = head.next	
 			head = head.next
-	
+
 		return count
 		
 

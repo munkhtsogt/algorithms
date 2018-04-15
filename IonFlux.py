@@ -36,5 +36,27 @@ Output:
     (int list) [21, 15, 29]
 '''
 
-def answer(h, q):
+def findTop(top, n, height):
+	right = top - 1
+	left = top - 2 ** height
+			
+	if n == left or n == right:
+		return top
+	else:
+		if n < left:
+			return findTop(left, n, height - 1)
+		else:
+			return findTop(right, n, height - 1)
 	
+def answer(h, q):
+	root = 2 ** h - 1
+	results = []
+	for i in range(0, len(q)):
+		if q[i] >= 1 and q[i] < root:
+			results.append(findTop(root, q[i], h - 1))
+		else:
+			results.append(-1)
+			
+	return results
+
+print answer(3, [1, 4, 7])
