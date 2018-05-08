@@ -12,5 +12,6 @@ class Solution(object):
 				nums[i - zeros] = nums[i]
 				nums[i] = 0
 
+		print nums
 sol = Solution()
-sol.moveZeroes([0, 0, 0, 1])
+sol.moveZeroes([1, 1, 1, 1, 0])

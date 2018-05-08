@@ -7,7 +7,7 @@ class Solution(object):
 		r = [-1] * len(nums)
 		for num in nums:
 			r[num - 1] = num - 1
-
+		
 		return [ i + 1 for i in range(0, len(r)) if r[i] == -1 ]
     	
 sol = Solution()

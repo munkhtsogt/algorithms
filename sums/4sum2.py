@@ -16,7 +16,7 @@ class Solution(object):
 					data[s] = [(i, j)]
 				else:
 					data[s].append((i, j))
-		result = set()	
+		result = set()
 		for k in data:
 			if target - k in data:
 				list1 = data[target - k]

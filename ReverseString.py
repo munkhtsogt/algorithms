@@ -13,7 +13,20 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return s[::-1]   
+        return s[::-1]
+        
+    
+    def reverseStringStack(self, s):
+		stack = []
+
+		for c in s:
+			stack.append(c)
+
+		r = ''
+		while len(stack) != 0:
+			r += stack[-1]
+			stack.pop()
+		return r
 	
 sol = Solution()
-print sol.reverseStringPythonic("hello world")
+print sol.reverseStringStack("hello world")
